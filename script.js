@@ -103,6 +103,7 @@ $(".spiral").append(
 var next = 0;
 
 $(document).on("click", ".spiral-item", function () {
+  $(".text").show();
   const index = $(this).index();
   const { periodo, fonte, eventos, conceitos } = historiaIndigena[index];
 
@@ -128,3 +129,19 @@ $(document).on("click", ".spiral-item", function () {
     `
   );
 });
+
+$(".text").hide();
+
+$("#nextBtn").click(function () {
+  $("#mainContainer").hide();
+  $(".subheader").hide();
+  $("#endContainer").show();
+});
+
+$("#backBtn").click(function () {
+  $("#mainContainer").show();
+  $(".subheader").show();
+  $("#endContainer").hide();
+});
+
+$("#endContainer").hide();
